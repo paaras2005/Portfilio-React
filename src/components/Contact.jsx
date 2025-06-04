@@ -1,13 +1,15 @@
 export default function Contact() {
   return (
     <section
-      className="text-center border rounded-end-5 m-3 p-4 bg-dark text-white"
-      id="projects"
+      className="text-center m-0 text-white"
+      id="projects" 
+      style={{color: '#4c0bce', background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)' }}
     >
       <div className="container py-5 align-items-center text-center">
         <h1 className="text-primary fw-bold capitalize mb-4">
           Contact Me <i className="bi bi-telephone-fill"></i>
         </h1>
+
         <div className="row col-12 justify-content-center m-3 p-3 text-start">
           {/* Left Side - Contact Details */}
           <div className="col-md-6 mb-4 mb-md-0 text-wrap">

@@ -1,52 +1,71 @@
-import React from 'react';
-// import 'bootstrap-icons/font/bootstrap-icons.css'; // Import Bootstrap Icons CSS
-// import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-// // Import Bootstrap JS if needed, e.g., for modals or dropdowns
-// import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JS
-// // Import custom CSS if you have any
-// import './Projects.css'; // Assuming you have a custom CSS file for additional styles
+// src/components/Projects.js
+import React from "react";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
-    title: 'online Cloth Shopping',
-    description: 'A store have online purchasing website.',
-    icon: 'bi bi-cart4',
-    link: '#',
+    title: "Portfolio Website",
+    description:
+      "A personal developer portfolio built using React and Bootstrap.",
+    github: "https://github.com/yourusername/portfolio",
+    demo: "https://yourportfolio.com",
   },
   {
-    title: 'Portfolio Website',
-    description: 'A personal portfolio made using React and Bootstrap.',
-    icon: 'bi bi-window',
-    link: '#',
+    title: "ToDo App",
+    description: "A task management tool built with React and localStorage.",
+    github: "https://github.com/yourusername/todo-app",
+    demo: "https://yourtodoapp.com",
   },
   {
-    title: 'web chat App',
-    description: 'A real-time chat application built with React and Firebase.',
-    icon: 'bi bi-chat-dots',
-    link: '#',
+    title: "Weather App",
+    description: "Shows real-time weather data using OpenWeatherMap API.",
+    github: "https://github.com/yourusername/weather-app",
+    demo: "https://yourweatherapp.com",
   },
 ];
 
-
 function Projects() {
   return (
-    <section className="text-center border rounded-start-5 m-3 p-4 bg-dark text-white" id="projects">
-      <h2 className="mb-4 text-center text-primary bg-dark">Projects <i className="bi bi-folder-fill"></i></h2>
-      <div className="row bg-dark p-4 rounded-3">
-        {projects.map((project, index) => (
-          <div className="col-md-4 mb-4 bg-dark text-white" key={index}>
-            <div className="card h-100 shadow-sm bg-dark text-white border-1 rounded-3 border-light">
-              <div className="card-body text-center">
-                <i className={`${project.icon} mb-3 text-primary`} style={{ fontSize: '2rem' }}></i>
-                <h5 className="card-title">{project.title}</h5>
-                <p className="card-text">{project.description}</p>
-                <a href={project.link} className="btn btn-outline-primary col-6" target="_blank" rel="noopener noreferrer">
-                  View Project
-                </a>
+    <section className="py-5 bg-light text-center" id="Projects" style={{ color: '#4c0bce', background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)', height: '100vh' }}>
+      <div className="container mt-5">
+        <h2 className="mb-5 text-primary fw-bold">Projects <i className="bi bi-folder-fill"></i></h2>
+        <div className="row mt-5">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="col-md-4 mb-4"
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
+            >
+              <div className="card h-100 shadow-sm border-0">
+                <div className="card-body d-flex flex-column">
+                  <h5 className="card-title">{project.title}</h5>
+                  <p className="card-text flex-grow-1">{project.description}</p>
+                  <div className="d-flex justify-content-around mt-3">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-outline-dark"
+                    >
+                      <FaGithub className="me-2" />
+                      GitHub
+                    </a>
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-outline-primary"
+                    >
+                      <FaExternalLinkAlt className="me-2" />
+                      Demo
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

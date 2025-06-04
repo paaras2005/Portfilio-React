@@ -1,43 +1,37 @@
+//src/components/skill.js
+// import React from 'react';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaGithub, FaPython} from 'react-icons/fa';
+
+const skills = [
+  { name: 'HTML', icon: <FaHtml5 />, color: '#e34c26' },    // HTML icon with color
+  { name: 'CSS', icon: <FaCss3Alt />, color: '#264de4' }, // CSS icon with color
+  { name: 'JavaScript', icon: <FaJs />, color: '#f0db4f' }, // JavaScript icon with color
+  { name: 'React', icon: <FaReact />, color: '#61dafb' }, // React icon with color
+  { name: 'Bootstrap', icon: <FaBootstrap />, color: '#563d7c' }, // Bootstrap icon with color
+  { name: 'Python', icon: <FaPython />, color: '#3776ab' },  // Python icon with color
+  { name: 'GitHub', icon: <FaGithub />, color: '#181717' }, // GitHub icon with color 
+];
+
 function Skills() {
   return (
-    <section className="text-center border rounded-end-5 m-3  bg-dark text-white p-0" id="skills">
-      <div className="p-3 m-3 bg-dark text-white">
-        <h2 className="text-primary fw-bold">Skills <i className="bi bi-gear-fill"></i></h2>
-        <ul className="list-unstyled text-white d-flex flex-wrap justify-content-center gap-3 mb-0 mt-5 align-items-center flex-column flex-md-row">
-          <li className="btn btn-outline-light m-0 p-2 mb-2 mb-md-0">
-            Django <i className="bi bi-filetype-py"></i>
-          </li>
-          <li className="btn btn-outline-light m-0 p-2 mb-2 mb-md-0">
-            RestAPI <i className="bi bi-braces"></i>
-          </li>
-          <li className="btn btn-outline-light m-0 p-2 mb-2 mb-md-0">
-            Python <i className="bi bi-filetype-py"></i>
-          </li>
-          <li className="btn btn-outline-light m-0 p-2 mb-2 mb-md-0">
-            React <i className="bi bi-filetype-jsx"></i>
-          </li>
-          <li className="btn btn-outline-light m-0 p-2 mb-2 mb-md-0">
-            Bootstrap <i className="bi bi-filetype-css"></i>
-          </li>
-          <li className="btn btn-outline-light m-0 p-2 mb-2 mb-md-0">
-            JavaScript <i className="bi bi-filetype-js"></i>
-          </li>
-          <li className="btn btn-outline-light m-0 p-2 mb-2 mb-md-0">
-            HTML <i className="bi bi-filetype-html"></i>
-          </li>
-          <li className="btn btn-outline-light m-0 p-2 mb-2 mb-md-0">
-            CSS <i className="bi bi-filetype-css"></i>
-          </li>
-          <li className="btn btn-outline-light m-0 p-2 mb-2 mb-md-0">
-            GitHub <i className="bi bi-github"></i>
-          </li>
-          <li className="btn btn-outline-light m-0 p-2 mb-2 mb-md-0">
-            VS Code/Cursor AI <i className="bi bi-code-slash"></i>
-          </li>
-          <li className="btn btn-outline-light m-0 p-2   mb-2 mb-md-0">
-            SQLite3 <i className="bi bi-filetype-sql"></i>
-          </li>
-        </ul>
+    <section className="py-5 text-center bg-light" style={{ color: '#4c0bce', background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)' }}>
+      <div className="container">
+        <h2 className="mb-4 text-primary fw-bold">My Skills <i className="bi bi-tools"></i></h2>
+        <div className="row">
+          {skills.map((skill, index) => (
+            <div
+              key={index}
+              className="col-md-4 mb-4"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div className="card p-4 shadow-sm border-0" style={{ fontSize: '4rem', color: skill.color, textAlign: 'center' , backgroundColor: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)'}}>
+                <div style={{ fontSize: '4rem', color: skill.color }}>{skill.icon}</div>
+                <h5 className="mt-3">{skill.name}</h5>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
