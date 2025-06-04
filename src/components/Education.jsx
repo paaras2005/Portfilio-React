@@ -20,7 +20,7 @@ const educationData = [
   },
    {
     institution: "Shree Swaminarayan Gurukul, Lathidad",
-    degree: " Higher Secondary Education or Higher Secondary School Certificate",
+    degree: "Secondary School Certificate (SSC)",
     period: "2020 - 2021",
     description: "Completed Higher Secondary education with a focus on Arts, developing a strong foundation in critical thinking and communication skills.",
   },
